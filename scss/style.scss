@@ -6,28 +6,34 @@ $burgetHeight: 19px;
 $burgerLine: 3px;
 $firstIndent: 8px;
 $secondIndent: 16px;
+$gradientEnd: #ca9064;
+$cardHeight: 300px;
+$cardWidth: 250px;
 //
 * {
   margin: 0;
   padding: 0;
   outline: none;
   box-sizing: border-box;
-  font-family: Roboto;
+  font-family: Montserrat;
 }
 ul {
   list-style-type: none;
 }
 .wrapper {
   min-height: 100vh;
-  display: grid;
-  grid-template: 100% / 60px 1fr;
+  // overflow-x: hidden;
 }
+// --------------
+// Left side navbar
 .navbar {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 60px;
-  background-image: linear-gradient(to right, #ca806c 0%, #dfa579 100%);
+  background-image: linear-gradient(to right, #ca806c 0%, #ca9064 100%);
   background-size: 200px;
-  padding: 10px 0;
+  padding: 30px 0 20px 0;
   height: 100vh;
   display: flex;
   flex-flow: column nowrap;
@@ -120,7 +126,7 @@ ul {
       font-size: 0;
       transition: font-size 0.2s ease-in-out;
       &.active {
-        font-size: 18px;
+        font-size: 1.2em;
       }
     }
     &-small {
@@ -140,4 +146,35 @@ ul {
       }
     }
   }
+}
+// --------------
+// main container
+.main {
+  padding: 20px 40px 20px 100px;
+  transition: padding 0.2s ease-in-out;
+  &.active {
+    padding-left: 240px;
+  }
+  &__title {
+    display: inline-block;
+    font-size: 2em;
+    line-height: 1;
+    letter-spacing: 1px;
+    font-weight: 700;
+    padding-bottom: 5px;
+    margin-bottom: 45px;
+    border-bottom: 3px solid $gradientEnd;
+  }
+  &__body {
+    margin-bottom: 20px;
+    margin-right: 20px;
+    display: grid;
+    grid-template: repeat(4, $cardHeight) / repeat(3, $cardWidth);
+    grid-gap: 20px;
+  }
+}
+.card {
+  width: $cardWidth;
+  height: $cardHeight;
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.35);
 }
