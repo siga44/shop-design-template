@@ -4,28 +4,59 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <div class="wrapper">
-      <div class="burger__wrapper">
-        <div class="burger" id="burger">
-          <div class="burger__line burger__line-1"></div>
-          <div class="burger__line burger__line-2"></div>
-          <div class="burger__line burger__line-3"></div>
-          <div class="burger__line burger__line-4"></div>
+      <nav class="navbar">
+        <div class="burger__wrapper">
+          <button class="burger" id="burger" data-burger-button>
+            <div class="burger__line burger__line-1" data-burger-button></div>
+            <div class="burger__line burger__line-2" data-burger-button></div>
+            <div class="burger__line burger__line-3" data-burger-button></div>
+            <div class="burger__line burger__line-4" data-burger-button></div>
+          </button>
         </div>
-      </div>
-      <ul class="menu" id="menu">
-        <li class="menu__item">Item 1</li>
-        <li class="menu__item">Item 2</li>
-        <li class="menu__item">Item 3</li>
-        <li class="menu__item">Item 4</li>
-        <li class="menu__item">Item 5</li>
-        <li class="menu__item">Item 6</li>
-        <li class="menu__item">Item 7</li>
-        <li class="menu__item">Item 8</li>
-        <li class="menu__item">Item 9</li>
-      </ul>
+        <ul class="menu" id="menu">
+          <li class="menu__item" data-menu-item="1">
+            <span class="menu__item-small">☺</span>
+            <span class="menu__item-full">Item 1</span>
+          </li>
+          <li class="menu__item" data-menu-item="2">
+            <span class="menu__item-small">☺</span>
+            <span class="menu__item-full">Item 2</span>
+          </li>
+          <li class="menu__item" data-menu-item="3">
+            <span class="menu__item-small">☺</span>
+            <span class="menu__item-full">Item 3</span>
+          </li>
+          <li class="menu__item" data-menu-item="4">
+            <span class="menu__item-small">☺</span>
+            <span class="menu__item-full">Item 4</span>
+          </li>
+          <li class="menu__item" data-menu-item="5">
+            <span class="menu__item-small">☺</span>
+            <span class="menu__item-full">Item 5</span>
+          </li>
+          <li class="menu__item" data-menu-item="6">
+            <span class="menu__item-small">☺</span>
+            <span class="menu__item-full">Item 6</span>
+          </li>
+          <li class="menu__item" data-menu-item="7">
+            <span class="menu__item-small">☺</span>
+            <span class="menu__item-full">Item 7</span>
+          </li>
+          <li class="menu__item" data-menu-item="8">
+            <span class="menu__item-small">☺</span>
+            <span class="menu__item-full">Item 8</span>
+          </li>
+          <li class="menu__item" data-menu-item="9">
+            <span class="menu__item-small">☺</span>
+            <span class="menu__item-full">Item 9</span>
+          </li>
+        </ul>
+      </nav>
     </div>
+    <script src="./js/index.js"></script>
   </body>
 </html>

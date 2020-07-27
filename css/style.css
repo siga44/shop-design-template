@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  outline: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: Roboto;
@@ -10,11 +11,13 @@ ul {
   list-style-type: none;
 }
 
-.wrapper {
+.navbar {
   width: 60px;
-  background: #1b1b1b;
+  background-image: -webkit-gradient(linear, left top, right top, from(#ca806c), to(#dfa579));
+  background-image: linear-gradient(to right, #ca806c 0%, #dfa579 100%);
+  background-size: 200px;
   padding: 10px 0;
-  min-height: 100vh;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -29,23 +32,35 @@ ul {
   transition: width 0.2s ease-in-out;
 }
 
-.wrapper.active {
+.navbar.active {
   width: 200px;
 }
 
 .burger {
   position: relative;
+  display: inline-block;
+  background: none;
+  border: none;
   width: 30px;
   height: 19px;
   cursor: pointer;
 }
 
 .burger__wrapper {
-  padding: 0 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 15px 0 0;
 }
 
 .burger:hover > .burger__line {
-  background: #1db954;
+  background: #fff;
 }
 
 .burger__line {
@@ -54,24 +69,52 @@ ul {
   left: 0;
   width: 30px;
   height: 3px;
-  background: #919496;
+  background: #ffd1c6;
+  -webkit-transition-property: top, left, width, height, -webkit-transform;
+  transition-property: top, left, width, height, -webkit-transform;
+  transition-property: top, left, width, height, transform;
+  transition-property: top, left, width, height, transform, -webkit-transform;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
 }
 
 .burger__line-2, .burger__line-3 {
   top: 8px;
 }
 
+.burger__line-1.active {
+  top: 8px;
+}
+
+.burger__line-2.active {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.burger__line-3.active {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
 .burger__line-4 {
   top: 16px;
+}
+
+.burger__line-4.active {
+  top: 8px;
 }
 
 .menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -81,7 +124,6 @@ ul {
           flex-flow: column nowrap;
   width: 100%;
   height: 100%;
-  background: #1b1b1b;
   padding: 10px 0;
   -webkit-transition: width 0.2s ease-in-out 0.1s;
   transition: width 0.2s ease-in-out 0.1s;
@@ -89,19 +131,42 @@ ul {
 
 .menu__item {
   position: relative;
-  color: #919496;
-  font-size: 18px;
-  letter-spacing: 0.5px;
-  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 10px 20px;
-  text-align: center;
-  border-top: 1px solid #282828;
-  border-bottom: 1px solid #101010;
+  width: 100%;
+  height: 45px;
+  max-height: 45px;
+  letter-spacing: 0.5px;
+  color: #ffe1da;
+  border-top: 1px solid #cf8b78;
+  border-bottom: 1px solid #ac7364;
   cursor: pointer;
 }
 
+.menu__item-full {
+  font-size: 0;
+  -webkit-transition: font-size 0.2s ease-in-out;
+  transition: font-size 0.2s ease-in-out;
+}
+
+.menu__item-full.active {
+  font-size: 18px;
+}
+
+.menu__item-small {
+  font-size: 36px;
+}
+
 .menu__item:hover {
-  color: #eee;
+  color: white;
 }
 
 .menu__item:hover::before {
@@ -111,7 +176,7 @@ ul {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 5px;
-  background: #1db954;
+  width: 3px;
+  background: #ffd1c6;
 }
 /*# sourceMappingURL=style.css.map */
