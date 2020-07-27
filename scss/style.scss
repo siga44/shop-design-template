@@ -17,7 +17,13 @@ $secondIndent: 16px;
 ul {
   list-style-type: none;
 }
+.wrapper {
+  min-height: 100vh;
+  display: grid;
+  grid-template: 100% / 60px 1fr;
+}
 .navbar {
+  position: fixed;
   width: 60px;
   background-image: linear-gradient(to right, #ca806c 0%, #dfa579 100%);
   background-size: 200px;
@@ -58,15 +64,10 @@ ul {
     transition-property: top, left, width, height, transform;
     transition-duration: 0.2s;
     transition-timing-function: ease-in-out;
-    transition-delay: 0.1s;
+    transition-delay: 0.15s;
     &-2,
     &-3 {
       top: $firstIndent;
-    }
-    &-1 {
-      &.active {
-        top: $firstIndent;
-      }
     }
     &-2 {
       &.active {
@@ -80,8 +81,14 @@ ul {
     }
     &-4 {
       top: $secondIndent;
+    }
+    &-1,
+    &-4 {
       &.active {
         top: $firstIndent;
+        left: $secondIndent;
+        width: 0;
+        height: 0;
       }
     }
   }
