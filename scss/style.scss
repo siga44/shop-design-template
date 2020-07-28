@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
 // vars
 $bgLight: #ffd1c6;
 $textLight: #ffe1da;
@@ -7,7 +8,7 @@ $burgerLine: 3px;
 $firstIndent: 8px;
 $secondIndent: 16px;
 $gradientEnd: #ca9064;
-$cardHeight: 300px;
+$cardHeight: 350px;
 $cardWidth: 250px;
 //
 * {
@@ -166,15 +167,16 @@ ul {
     border-bottom: 3px solid $gradientEnd;
   }
   &__body {
-    margin-bottom: 20px;
-    margin-right: 20px;
     display: grid;
-    grid-template: repeat(4, $cardHeight) / repeat(3, $cardWidth);
-    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax($cardWidth, 1fr));
+    grid-gap: 40px;
   }
 }
 .card {
-  width: $cardWidth;
   height: $cardHeight;
-  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  // border: 3px solid $gradientEnd;
+  border-radius: 0.8em;
+  padding: 1em 2em;
+  cursor: pointer;
 }

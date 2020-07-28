@@ -1,14 +1,13 @@
 const wrapper = document.querySelector('.wrapper');
-const main = wrapper.querySelector('.main__body');
-const navbar = wrapper.querySelector('.navbar');
-const burger = navbar.querySelector('#burger');
-const menu = navbar.querySelector('#menu');
+const navbar = wrapper.children[0];
+const burgerButton = navbar.querySelector('#burger');
+const navbarItemsNodes = navbar.querySelectorAll('[data-menu-item]');
 
-navbar.addEventListener('click', event => {
+wrapper.addEventListener('click', event => {
   const target = event.target;
-  const menuItems = [...menu.children].map(li => li.lastElementChild);
-  const elementWithActive = [...wrapper.children, ...burger.children, ...menuItems, main];
   if (target.hasAttribute('data-burger-button')) {
-    elementWithActive.forEach(item => item.classList.toggle('active'));
+    const navbarItemsArray = [...navbarItemsNodes].map(el => el.lastElementChild);
+    const changingWithBurgerClickElements = [...wrapper.children, ...burgerButton.children, ...navbarItemsArray];
+    changingWithBurgerClickElements.forEach(el => el.classList.toggle('active'));
   }
 });
